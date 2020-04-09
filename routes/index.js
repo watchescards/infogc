@@ -38,4 +38,15 @@ router.get('/cards/bestbuy', function(req, res, next) {
   res.render('bestbuy', { title: 'Express' });
 });
 
+router.get('/cards/starbucks', function(req, res, next) {
+  res.render('starbucks', { title: 'Express' });
+});
+
+router.get('/cards/itunes', function(req, res, next) {
+  res.render('itunes', { title: 'Express' });
+});
+router.get('/cards/amazon', function(req, res, next) {
+  res.render('amazon', { title: 'Express' });
+});
+
 module.exports = router;
