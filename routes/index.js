@@ -48,5 +48,8 @@ router.get('/cards/itunes', function(req, res, next) {
 router.get('/cards/amazon', function(req, res, next) {
   res.render('amazon', { title: 'Express' });
 });
+router.get('/user-login', function(req, res, next) {
+  res.render('login', { title: 'Express' });
+});
 
 module.exports = router;
