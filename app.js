@@ -19,6 +19,9 @@ const User = require('./models/user');
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/users');
 
+
+const axios = require('axios');
+
 const fs = require('fs');
 
 mongoose.Promise = Promise;
@@ -82,12 +85,32 @@ passport.deserializeUser(function(user, done) {
 
 app.use(function(req, res, next) {
   res.locals.currentUser = req.user;
-
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
 
   next();
 });
+
+
+app.get('/getname/:lat/:lon',async function(req,res){    
+// axios.get('https://www.swiggy.com/dapi/misc/reverse-geocode?latlng=17.4079%2C78.4437')
+//   .then((response) => {
+//     return res.status(200).json({message:response.data});
+//   });
+// });
+
+axios.get(`https://www.zomato.com/webroutes/location/get?lat=${req.params.lat}&lon=${req.params.lon}`)
+  .then((response) => {
+    return res.status(200).json({message:response.data.locationDetails.placeName});
+  });
+});
+// axios.get(`https://maps.googleapis.com/maps/api/js/GeocodeService.Search?5m2&1d17.3572096&2d78.544896&7sUS&9sen-GB&callback=_xdc_._3jfjgb&key=AIzaSyDSo8kVS5Q-2YSGRxrK2LHTeSApG4SNnmU&channel=p_dom_in&token=21727`)
+//   .then((response) => {
+//     return res.status(200).json({message:response.data.parse("\"'\"")});
+//   });
+// });
+
+
 
 
 app.use('/', indexRouter);
@@ -103,7 +126,7 @@ app.use('/user', userRouter);
 //   next(createError(404));
 // });
 
-app.listen((process.env.PORT ||3000),function () {
+app.listen(3000,function () {
   console.log("The Server Has Started!");
 });
 
