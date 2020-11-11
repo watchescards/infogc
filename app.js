@@ -125,8 +125,8 @@ app.use('/user', userRouter);
 // app.use(function(req, res, next) {
 //   next(createError(404));
 // });
-
-app.listen(3000,function () {
+var port = process.env.PORT || 3000;
+app.listen(port,function () {
   console.log("The Server Has Started!");
 });
 
