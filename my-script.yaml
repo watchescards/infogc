@@ -1,0 +1,9 @@
+config:
+  target: https://staging-api.ososweb.com/api/v1.0/view/checkStatus/c5f07a5f-c047-42d0-bbe0-8ef8f52
+  phases:
+    - duration: 600
+      arrivalRate: 10
+scenarios:
+  - flow:
+      - get:
+          url: "/"

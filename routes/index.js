@@ -170,6 +170,26 @@ router.get('/cards/gucci', function(req, res, next) {
 });
 
 
+router.get('/cards/game-stop', function(req, res, next) {
+  res.render('gamestop');
+});
+
+
+router.get('/cards/cvs-pharma', function(req, res, next) {
+  res.render('cvspharma');
+});
+
+router.get('/cards/foot-locker', function(req, res, next) {
+  res.render('footlocker');
+});
+
+router.get('/cards/kohls', function(req, res, next) {
+  res.render('kohls');
+});
+
+
+
+
 
 
 
