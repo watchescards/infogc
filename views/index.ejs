@@ -277,49 +277,27 @@
                         </div>
                     </div>
                 </div>
+              
+
+
+              
                 <div class="row">
+                    <%pop.forEach((list)=>{%>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-do text-center mb-30">
                             <div class="do-icon">
-                             <img src="assets/img/logo/walmart.png" height="150px;">
+                             <img src="<%=list.card_image%>" height="150px;">
                             </div>
                             <div class="do-caption">
-                                <h4>Walmart</h4>
-                                <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p>
+                                <h4><%=list.card_name%></h4>
+                                <!-- <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p> -->
                             </div>
                             <div class="do-btn">
-                                <a href="/cards/walmart"><i class="ti-arrow-right"></i> Know More</a>
+                                <a href="/cards/<%=list._id%>"><i class="ti-arrow-right"></i> Know More</a>
                             </div>
                         </div>
                     </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="single-do active text-center mb-30">
-                            <div class="do-icon">
-                                <img src="assets/img/logo/homedepot.png" height="150px;">
-                            </div>
-                            <div class="do-caption">
-                                <h4>Homedepot</h4>
-                                <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p>
-                            </div>
-                            <div class="do-btn">
-                                <a href="/cards/home-depot"><i class="ti-arrow-right"></i> Know More</a>
-                            </div>
-                        </div>
-                    </div>
-                     <div class="col-lg-4 col-md-6">
-                        <div class="single-do text-center mb-30">
-                            <div class="do-icon">
-                                <img src="assets/img/logo/bestbuy.png" height="150px;">
-                            </div>
-                            <div class="do-caption">
-                                <h4>Bestbuy</h4>
-                                <p>Hunky dory barney fanny around up the duff no biggie loo cup of tea jolly good ruddy say arse!</p>
-                            </div>
-                            <div class="do-btn">
-                                <a href="/cards/bestbuy"><i class="ti-arrow-right"></i> Know More</a>
-                            </div>
-                        </div>
-                    </div>
+                    <%})%>
                 </div>
             </div>
         </div>
@@ -339,168 +317,22 @@
                     </div>
                 </div>
 
+
+       
+
                          <div class="row">
-
-
+<!-- <span><%=cards.length%></span> -->
+                            <%cards.forEach((list)=>{%>
                     <div class="card col" style="width: 10rem;">
- <a href="/cards/game-stop"> <img src="https://pbs.twimg.com/profile_images/1334688363157262336/R3l0UyYY.jpg" class="card-img-top" alt="..."></a>
+ <a href="/cards/<%=list._id%>"> <img src="<%=list.card_image%>" class="card-img-top" alt="..."></a>
  
 </div>
-           <div class="card col" style="width: 10rem;">
- <a href="/cards/cvs-pharma"> <img src="https://www.unomaha.edu/news/2020/03/img/cvs-f.jpg" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
- <a href="/cards/foot-locker"> <img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/94/Foot_Locker_logo.svg/1200px-Foot_Locker_logo.svg.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
- <a href="/cards/kohls"> <img src="https://pbs.twimg.com/profile_images/1102627749838155776/hWfrvm2j.png" class="card-img-top" alt="..."></a>
-
-</div>
+<%})%>
+          
                     
                 </div>
 
-                <div class="row">
-
-
-                    <div class="card col" style="width: 10rem;">
- <a href="/cards/calvin-klin"> <img src="assets/img/logo/1.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
- <a href="/cards/yankee-candle"> <img src="assets/img/logo/2.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
- <a href="/cards/ralph-laurel"> <img src="assets/img/logo/3.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
- <a href="/cards/walmart"> <img src="assets/img/logo/4.png" class="card-img-top" alt="..."></a>
-
-</div>
-                    
-                </div>
-                <div class="row">
-
-
-                    <div class="card col" style="width: 10rem;">
-  <a href="/cards/mc-donalds"><img src="assets/img/logo/5.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/nordstrom"><img src="assets/img/logo/6.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/amazon"><img src="assets/img/logo/7.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/home-depot"><img src="assets/img/logo/8.png" class="card-img-top" alt="..."></a>
-
-</div>
-                    
-                </div>
-
-                <div class="row">
-                    <div class="card col" style="width: 10rem;">
-  <a href="/cards/quiznos"><img src="assets/img/logo/9.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/sephora"><img src="assets/img/logo/10.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/netflix"><img src="assets/img/logo/11.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/ebay"><img src="assets/img/logo/12.png" class="card-img-top" alt="..."></a>
-
-</div>
-                    
-                </div>
-                <div class="row">
-                    <div class="card col" style="width: 10rem;">
-  <a href="/cards/dunkin-donuts"><img src="assets/img/logo/13.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/tgif"><img src="assets/img/logo/14.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/itunes"><img src="assets/img/logo/15.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/lego"><img src="assets/img/logo/16.png" class="card-img-top" alt="..."></a>
-
-</div>
-                    
-                </div>
-                         <div class="row">
-                    <div class="card col" style="width: 10rem;">
-  <a href="/cards/fossil"><img src="assets/img/logo/17.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/oakley"><img src="assets/img/logo/18.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/kfc"><img src="assets/img/logo/19.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/zappos" ><img src="assets/img/logo/20.png" class="card-img-top" alt="..."></a>
-
-</div>
-                    
-                </div>
-                         <div class="row">
-                    <div class="card col" style="width: 10rem;">
-  <a href="/cards/pizza-hut" ><img src="assets/img/logo/21.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/sam-club" ><img src="assets/img/logo/22.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/jcpenney" ><img src="assets/img/logo/23.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/under-armour" ><img src="assets/img/logo/24.png" class="card-img-top" alt="..."></a>
-
-</div>
-                    
-                </div>
-                         <div class="row">
-                    <div class="card col" style="width: 10rem;">
-  <a href="/cards/gucci" ><img src="assets/img/logo/25.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/target" ><img src="assets/img/logo/26.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           <div class="card col" style="width: 10rem;">
-  <a href="/cards/bestbuy" ><img src="assets/img/logo/27.png" class="card-img-top" alt="..."></a>
- 
-</div>
-   <div class="card col" style="width: 10rem;">
-  <a href="/cards/calvin-klin"><img src="assets/img/logo/1.png" class="card-img-top" alt="..."></a>
- 
-</div>
-           
-                    
-                </div>
-           
+             
             </div>
         </div>
              <div class="we-create-area create-padding">

@@ -15,6 +15,7 @@ const path = require('path');
 const createError = require('http-errors');
 const logger = require('morgan');
   const Admin = require('./models/admin');
+  const Card = require('./models/cards');
 const User = require('./models/user');
 const indexRouter = require('./routes/index');
 const userRouter = require('./routes/users');
@@ -23,13 +24,16 @@ const userRouter = require('./routes/users');
 const axios = require('axios');
 
 const fs = require('fs');
+const { db } = require('./models/admin');
 
 mongoose.Promise = Promise;
 mongoose.set('useCreateIndex', true);
-mongoose.connect("mongodb://dxc:dxcintern2019@ds141872.mlab.com:41872/dxce-com", {
+mongoose.connect("mongodb+srv://watches:reset123@cluster0.nj0ur.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", {
     keepAlive: true,
     useNewUrlParser: true,
      useUnifiedTopology: true
+}).then(()=>{
+  console.log('Connected')
 });
 
 
@@ -54,6 +58,15 @@ app.use(cookieParser());
 app.use(flash());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+app.get('/add_card',async function(req,res){
+  res.render('add_card');
+})
+
+app.post('/add_card_post',async function(req,res){
+await Card.create(req.body)
+  res.redirect('/add_card')
+})
 
 // passport.use('admin',new LocalStrategy(db.Admin.authenticate()));
 

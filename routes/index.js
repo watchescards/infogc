@@ -21,13 +21,22 @@ cloudinary.config({
     const Card = require('../models/cards');
 const User = require('../models/user');
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+router.get('/', async function(req, res, next) {
+  const cards = await  Card.find({});
+  var c = cards;
+  var pop = c.splice(0,3);
+  const cardss = await  Card.find({});
+  res.render('index', { cards: cardss,pop:pop });
 });
 
 router.get('/popular-gift-cards',async function(req, res, next) {
   const cards = await  Card.find({});
   res.render('popular', { cards: cards });
+});
+
+router.get('/cards/:id',async function(req, res, next) {
+  const card = await  Card.findOne({_id:req.params.id});
+  res.render('card_specific', { card: card });
 });
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Express' });

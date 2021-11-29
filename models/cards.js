@@ -8,6 +8,7 @@ const CardsSchema = new mongoose.Schema({
     card_description:String,
     hq:String,
     customer_care:String,
+    balance_link:String,
     createdAt:{type:Date,default:Date.now()}
 });
 
