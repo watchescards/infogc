@@ -1,5 +1,67 @@
 <% include ./partials/header %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Icons</title>
+    <link rel="stylesheet" href="./social-media-icons.css">
+    <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+</head>
 <style type="text/css">
+.social-menu ul{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.social-menu ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+
+.social-menu ul li .fab{
+    font-size: 30px;
+    line-height: 60px;
+    transition: .3s;
+    color: #000;
+}
+
+.social-menu ul li .fab:hover{
+    color: #fff;
+}
+
+.social-menu ul li a{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    transition: .6s;
+    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+}
+
+.social-menu ul li a:hover{
+    transform: translate(0, -10%);
+}
+
+.social-menu ul li:nth-child(1) a:hover{
+    background-color: rgba(0, 0, 0, 0.829);
+}
+.social-menu ul li:nth-child(2) a:hover{
+    background-color: #E4405F;
+}
+.social-menu ul li:nth-child(3) a:hover{
+    background-color: #0077b5;
+}
+.social-menu ul li:nth-child(4) a:hover{
+    background-color: #000;
+}
     .card{
         border: 0px;
     }
@@ -124,12 +186,17 @@
                         <div class="row d-flex align-items-center">
                             <div class="col-lg-7 col-md-9 ">
                                 <div class="hero__caption">
-                                    <h1 data-animation="fadeInLeft" data-delay=".4s" style="color: ">Info <br> Gift Cards</h1>
-                                    <p data-animation="fadeInLeft" data-delay=".6s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravi.</p>
+                                    <h1 data-animation="fadeInLeft" data-delay=".4s" style="color: ">Turn gift cards  <br> into cash</h1>
+                                    <p data-animation="fadeInLeft" data-delay=".6s">Sell gift cards you don’t need. 
+                                        Use the cash the way you want.</p>
                                     <!-- Hero-btn -->
-                                    <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s">
-                                        <a href="/connect-with-market" class="btn hero-btn">Connect with Market Now</a>
+                                    <div class="header-left-btn f-left d-none d-lg-block" style="margin-right: 30px;">
+                                        <a href="/sell-gift-card/all" class="btn header-btn">Sell Gift Card</a>
                                     </div>
+                                    <div class="header-left-btn f-left d-none d-lg-block">
+                                        <a href="/check-balance/all" class="btn header-btn">Check Balance</a>
+                                    </div>
+
                                 </div>
                             </div>
                             <div class="col-lg-4">
@@ -140,6 +207,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.png">
                     <div class="container">
                         <div class="row d-flex align-items-center">
@@ -162,6 +230,12 @@
                     </div>
                 </div>
             </div>
+        </div>
+        <div style="justify-content: center;align-items: center;text-align: center;">
+           <a href="/check-balance/all">
+            <img src="assets/sel.png"  height="100px" alt="">
+           </a>
+
         </div>
         <!-- Slider Area End-->
         <section id="labels">
@@ -282,7 +356,7 @@
 
               
                 <div class="row">
-                    <%pop.forEach((list)=>{%>
+                    <%cards.forEach((list)=>{if(list.card_name == "Home Depot" || list.card_name == "Target" || list.card_name == "Walmart" ){%>
                     <div class="col-lg-4 col-md-6">
                         <div class="single-do text-center mb-30">
                             <div class="do-icon">
@@ -297,7 +371,7 @@
                             </div>
                         </div>
                     </div>
-                    <%})%>
+                    <%}})%>
                 </div>
             </div>
         </div>
@@ -320,14 +394,20 @@
 
        
 
-                         <div class="row">
+                         <div class="row" style="justify-content: center;">
 <!-- <span><%=cards.length%></span> -->
-                            <%cards.forEach((list)=>{%>
-                    <div class="card col" style="width: 10rem;">
+                            <%cards.forEach((list)=>{if(list.card_image){%>
+                    <div class="col-sm-4" style="width: 20rem;margin-bottom: 20px;justify-content: center;">
+                        <!-- <span><%=list.card_name%></span> -->
+                        <%if(list.card_image.includes('assets')){%>
+                            <a href="/cards/<%=list._id%>"> <img src="https://https://gca.<%=list.card_image.substr(15,list.card_image.length)%>" class="card-img-top" alt="..."></a>
+
+                            <%}else{%>
  <a href="/cards/<%=list._id%>"> <img src="<%=list.card_image%>" class="card-img-top" alt="..."></a>
+ <%}%>
  
 </div>
-<%})%>
+<%}})%>
           
                     
                 </div>
@@ -345,8 +425,8 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="we-create-cap">
-                            <h3>Connect With Market </h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis orem ipsum dolor sit amet, consectetur adipiscing.</p>
+                            <h3>Save Your Way. Spend Your Way. </h3>
+                            <p>At InfoGiftCard, we have one goal: to put money back into the pockets of consumers so that they can enjoy more cash to spend it on what matters most. With GiftCash, turning your unwanted gift cards into cash is a completely straightforward and secure process, while offering some of the shortest turnaround times and highest payout rates in the industry. Our commitment to ensuring that our clients can sell their gift cards with confidence has helped us become one of the leading gift card websites, and has allowed us to serve thousands of happy customers.</p>
                             <a href="/connect-with-market" class="btn">Connect now</a>
                         </div>
                     </div>
@@ -424,57 +504,14 @@
          <!-- Testimonial Start -->
          <div class="testimonial-area">
             <div class="container">
-               <div class="testimonial-main">
-                    <!-- Section-tittle -->
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-5  col-md-8 pr-0">
-                            <div class="section-tittle text-center">
-                                <h2>What Client Say About Us</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row d-flex justify-content-center">
-                            <div class="col-lg-10 col-md-9">
-                                <div class="h1-testimonial-active">
-                                    <!-- Single Testimonial -->
-                                    <div class="single-testimonial text-center">
-                                        <div class="testimonial-caption ">
-                                            <div class="testimonial-top-cap">
-                                                <p>Best gift card deals on time </p>
-                                            </div>
-                                            <!-- founder -->
-                                            <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                                                <div class="founder-img">
-                                                    <img src="assets/img/testmonial/testimonial.png" alt="">
-                                                </div>
-                                            <div class="founder-text">
-                                                <span>Oliva jems</span>
-                                                <p>UIX designer</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div><!-- Single Testimonial -->
-                                    <div class="single-testimonial text-center">
-                                        <div class="testimonial-caption ">
-                                            <div class="testimonial-top-cap">
-                                                <p>Complete Information about GiftCards</p>
-                                            </div>
-                                            <!-- founder -->
-                                            <div class="testimonial-founder d-flex align-items-center justify-content-center">
-                                                <div class="founder-img">
-                                                   <!--  <img src="assets/img/testmonial/testimonial.png" alt=""> -->
-                                                </div>
-                                            <div class="founder-text">
-                                                <span>John</span>
-                                                <p>Marketing Specialist</p>
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                    </div>
-               </div>
+                <div class="social-menu" style="position: absolute;left: 700px;">
+                    <ul>
+                        <li><a href="https://github.com/sanketbodke" target="blank"><i class="fab fa-github"></i></i></a></li>
+                        <li><a href="https://www.instagram.com/imsanketbodke/" target="blank"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.linkedin.com/in/sanket-bodake-995b5b205/" target="blank"><i class="fab fa-linkedin-in"></i></a></li>
+                        <li><a href="https://codepen.io/sanketbodke"><i class="fab fa-codepen" target="blank"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- Testimonial End -->

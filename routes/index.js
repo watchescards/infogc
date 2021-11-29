@@ -34,6 +34,67 @@ router.get('/popular-gift-cards',async function(req, res, next) {
   res.render('popular', { cards: cards });
 });
 
+function escapeRegex(text) {
+  return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
+};
+
+router.post('/search-sell',async function(req, res, next) {
+
+  if(req.body.search){
+    res.redirect(`/sell-gift-card/${req.body.search}`)
+
+  }else{
+    res.redirect(`/sell-gift-card/all`)
+
+  }
+  // const cards = await  Card.find({card_name:req.body.search});
+  // res.render('popular', { cards: cards });
+});
+
+router.post('/search-cb',async function(req, res, next) {
+
+  if(req.body.search){
+    res.redirect(`/check-balance/${req.body.search}`)
+
+  }else{
+    res.redirect(`/check-balance/all`)
+
+  }
+  // const cards = await  Card.find({card_name:req.body.search});
+  // res.render('popular', { cards: cards });
+});
+
+
+router.get('/check-balance/:search',async function(req, res, next) {
+  const regex = new RegExp(escapeRegex(req.params.search), 'gi');
+  console.log(req.params)
+  if(req.params.search == "all"){
+    const cards = await  Card.find({});
+  res.render('cb', { cards: cards,search:'all' });
+  }else{
+    // const cards = await  Card.find({card_name:req.params.search});
+    const cards = await  Card.find({card_name:regex});
+    console.log(cards)
+  res.render('cb', { cards: cards,search:req.params.search });
+  }
+  
+});
+router.get('/sell-gift-card/:search',async function(req, res, next) {
+  const regex = new RegExp(escapeRegex(req.params.search), 'gi');
+  console.log(req.params)
+  if(req.params.search == "all"){
+    const cards = await  Card.find({});
+  res.render('sell', { cards: cards,search:'all' });
+  }else{
+    // const cards = await  Card.find({card_name:req.params.search});
+    const cards = await  Card.find({card_name:regex});
+    console.log(cards)
+  res.render('sell', { cards: cards,search:req.params.search });
+  }
+  
+});
+
+
 router.get('/cards/:id',async function(req, res, next) {
   const card = await  Card.findOne({_id:req.params.id});
   res.render('card_specific', { card: card });

@@ -13,8 +13,9 @@
              <div class="row d-flex justify-content-center">
                  <div class="col-lg-8">
                      <div class="section-tittle text-center mb-80">
-                        
-                         <h2 style="color: #000;"><%=card.card_name%></h2>
+                        <a href="/cards/<%=card._id%>"> <img src="<%=card.card_image%>" height="200px" width=300px" class="card-img-top" alt="..."></a>
+ 
+                         <!-- <h2 style="color: #000;"><%=card.card_name%></h2> -->
                      </div>
                  </div>
              </div>
@@ -30,16 +31,40 @@
                <div class="single-post">
                   <section class="sample-text-area">
       <div class="container box_1170">
-         <h3 class="text-heading"><%=card.card_name%></h3>
+         <h3 class="text-heading"><%=card.card_name%> Gift Card</h3>
+         <!-- <a href="/cards/<%=card._id%>"> <img src="<%=card.card_image%>" class="card-img-top" alt="..."></a> -->
+
          <p class="sample-text">
+<div style="margin:10px">
+   <a href="<%=card.balance_link%>"> <img src="../assets/cb.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+
+   <a href="/login"> <img src="../assets/sell.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+
+   <a href="<%=card.balance_link%>"> <img src="../assets/buy.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+</div>
+
+        
+         <!-- <div style="border-width: 1px;border-radius: 30px;border-color: #000;">
+   <div style="padding: 5px;stroke: #000; border-width: 10px;border-radius: 30px;border-color: #000;">Sell <%=card.card_name%> Gift Card at 80% Payout</div>
+</div> -->
+            <!-- <b> <label>Check Balance:</label></b><span>&nbsp;&nbsp;<a href="<%=card.balance_link%>" style="color: blue;">
+               click here</a></span><br> -->
+
+
+
             <%=card.card_description%><br><br>
            <b> <label>Head Quarters:</label></b><span>&nbsp;&nbsp;<%=card.hq%></span>
            <br>
            <b> <label>Customer care:</label></b><span>&nbsp;&nbsp;
-            <%=card.customer_care%></span>
+              <%if(card.customer_care){%>
+            <%=card.customer_care%>
+            <%}else{%>
+N/a
+               <%}%>
+         
+         </span>
 <br>
-           <b> <label>Check Balance:</label></b><span>&nbsp;&nbsp;<a href="<%=card.balance_link%>" style="color: blue;">
-click here</a></span>
+           
 
          </p>
       </div>
