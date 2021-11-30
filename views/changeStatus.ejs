@@ -1,0 +1,253 @@
+<% include ./partials/header %>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Icons</title>
+    <link rel="stylesheet" href="./social-media-icons.css">
+    <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+</head>
+<style type="text/css">
+.social-menu ul{
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    padding: 0;
+    margin: 0;
+    transform: translate(-50%, -50%);
+    display: flex;
+}
+
+.social-menu ul li{
+    list-style: none;
+    margin: 0 15px;
+}
+
+.social-menu ul li .fab{
+    font-size: 30px;
+    line-height: 60px;
+    transition: .3s;
+    color: #000;
+}
+
+.social-menu ul li .fab:hover{
+    color: #fff;
+}
+
+.social-menu ul li a{
+    position: relative;
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #fff;
+    text-align: center;
+    transition: .6s;
+    box-shadow: 0 5px 4px rgba(0,0,0,.5);
+}
+
+.social-menu ul li a:hover{
+    transform: translate(0, -10%);
+}
+
+.social-menu ul li:nth-child(1) a:hover{
+    background-color: rgba(0, 0, 0, 0.829);
+}
+.social-menu ul li:nth-child(2) a:hover{
+    background-color: #E4405F;
+}
+.social-menu ul li:nth-child(3) a:hover{
+    background-color: #0077b5;
+}
+.social-menu ul li:nth-child(4) a:hover{
+    background-color: #000;
+}
+    .card{
+        border: 0px;
+    }
+
+    section {
+  padding: 5% 0;
+}
+.alizarin {
+  background: #e74c3c;
+}
+.amethyst {
+  background: #9b59b6;
+}
+.emerald {
+  background: #2ecc71;
+}
+.midnight-blue {
+  background: #2c3e50;
+}
+.peter-river {
+  background: #3498db;
+}
+.dl {
+  background: #f0f0f0;
+  padding: 30px 0;
+  border-radius: 20px;
+  position: relative;
+}
+.dl:before {
+  content: " ";
+  height: 20px;
+  width: 20px;
+  background: #ddd;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 20px;
+  margin-left: -10px;
+}
+.dl .brand {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  text-align: center;
+  min-height: 100px;
+}
+.dl .discount {
+  min-height: 50px;
+  position: relative;
+  font-size: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-weight: 700;
+  padding: 20px 15px 0;
+  color: #f1c40f;
+}
+.dl .discount:after {
+  content: " ";
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  position: absolute;
+  bottom: -20px;
+  left: 20%;
+}
+.dl .discount.alizarin:after {
+  border-top: 20px solid #e74c3c;
+}
+.dl .discount.peter-river:after {
+  border-top: 20px solid #3498db;
+}
+.dl .discount.emerald:after {
+  border-top: 20px solid #2ecc71;
+}
+.dl .discount.amethyst:after {
+  border-top: 20px solid #9b59b6;
+}
+.dl .discount .type {
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: -30px;
+}
+.dl .descr {
+  color: #999;
+  margin-top: 10px;
+  padding: 20px 15px;
+}
+.dl .ends {
+  padding: 0 15px;
+  color: #f1c40f;
+  margin-bottom: 10px;
+}
+.dl .coupon {
+  min-height: 50px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 18px;
+  padding: 20px 15px;
+}
+.dl .coupon a.open-code {
+  color: #16a085;
+}
+.dl .coupon .code {
+  letter-spacing: 1px;
+  border-radius: 4px;
+  margin-top: 10px;
+  padding: 10px 15px;
+  color: #f1c40f;
+  background: #f0f0f0;
+}
+
+</style>
+    <main>
+
+
+        <!-- Slider Area End-->
+  
+        <!-- What We do start-->
+  
+        <!-- What We do End-->
+        <!-- We Create Start -->
+   
+        <!-- We Create End --><br>
+        <!-- Generating Start -->
+        <div class="generating-area ">
+            <div class="container">
+                 <!-- Section-tittle -->
+                 <div class="row d-flex justify-content-center" style="margin-top: 100px;">
+                    <div class="col-lg-8">
+                        <div class="section-tittle text-center">
+                            <h2>Gift Card Brands</h2>
+                        </div>
+                    </div>
+                </div>
+
+
+       
+
+                         <div class="row" style="justify-content: center;">
+<!-- <span><%=cards.length%></span> -->
+                            <%cards.forEach((list)=>{if(list.card_image){%>
+                    <div class="col-sm-4" style="width: 20rem;margin-bottom: 20px;justify-content: center;">
+                       <div class="row">
+                           <div>
+                            <span>Status:<%if(list.canFake){%>Internal<%}else{%>Original<%}%> | </span>
+                            <form action="/update_card/<%=list._id%>" method="POST" >
+                                <input type="text" placeholder="hq" value="<%=list.hq%>" name="hq">
+                                <input type="text" placeholder="customer" value="<%=list.customer_care%>" name="customer_care">
+                                <input type="text" placeholder="card_description" value="<%=list.card_description%>" name="card_description">
+                                <input type="submit" value="save">
+                            </form>
+
+                           </div>
+                        <div>
+                       <a href="/update/<%=list._id%>"><span style="color: #000;">Change Status</span></a>
+                        </div>
+                       </div>
+                       
+                        <%if(list.card_image.includes('assets')){%>
+                            <a href="/cards/<%=list._id%>"> <img src="https://https://gca.<%=list.card_image.substr(15,list.card_image.length)%>" class="card-img-top" alt="..."></a>
+
+                            <%}else{%>
+ <a href="/cards/<%=list._id%>"> <img src="<%=list.card_image%>" class="card-img-top" alt="..."></a>
+ <%}%>
+ 
+</div>
+<%}})%>
+          
+                    
+                </div>
+
+             
+            </div>
+        </div>
+            
+     
+
+        <!-- Testimonial End -->
+        <!-- Tips Triks Start -->
+ <!--  -->
+        <!-- Tips Triks End -->
+         <!-- have-project Start-->
+   
+        <!-- have-project End -->
+
+    </main>
+<% include ./partials/footer %>

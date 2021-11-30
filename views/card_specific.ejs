@@ -5,6 +5,7 @@
     color: white;  
    }
 </style>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
        <!-- Slider Area Start-->
        <div class="services-area" style="background-color: #fff;">
          <div class="container">
@@ -21,8 +22,7 @@
              </div>
          </div>
      </div>
-     <!-- Slider Area End-->
-     
+
    <!--================Blog Area =================-->
    <section class="blog_area single-post-area section-padding" >
       <div class="container">
@@ -36,11 +36,43 @@
 
          <p class="sample-text">
 <div style="margin:10px">
-   <a href="<%=card.balance_link%>"> <img src="../assets/cb.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+   <%if(card.canFake){%>
+      <a data-toggle="modal" data-target="#exampleModal"> <img src="../assets/cb.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+     <!-- Button trigger modal -->
 
-   <a href="/login"> <img src="../assets/sell.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+ 
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+   <div class="modal-dialog" role="document">
+     <div class="modal-content">
+       <div class="modal-header">
+         <h5 class="modal-title" id="exampleModalLabel"><%=card.card_name%> Balance Check</h5>
+         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+           <span aria-hidden="true">&times;</span>
+         </button>
+       </div>
+       <div class="modal-body">
+          <span>Card Number</span><br>
+      <input type="text" name="card_name" class="form-control" placeholder="XXXX XXXXX">
+      <span>Pin</span><br>
+      <input type="text" name="pin" class="form-control" placeholder="XXXX">
+<span>Available Balance : $</span>
+       </div>
+       <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Check Now</button>
+       </div>
+     </div>
+   </div>
+ </div>
+      <%}else{%>
+         <a href="<%=card.balance_link%>"> <img src="../assets/cb.png" style="object-fit: contain;"  height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
 
-   <a href="<%=card.balance_link%>"> <img src="../assets/buy.png" height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+         <%}%>
+
+   <a href="/login"> <img src="../assets/sell.png" height="40px" style="object-fit: contain;"  width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
+
+   <a href="<%=card.balance_link%>"> <img src="../assets/buy.png" style="object-fit: contain;"  height="40px" width="50px" class="card-img-top" alt="..." style="object-fit: cover;margin:10px"></a>
 </div>
 
         
@@ -77,10 +109,10 @@ N/a
                         <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
                      </div>
                      <ul class="social-icons">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                        <li><a href="https://www.facebook.com/Infogiftcard/"><i class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://twitter.com/InfoGiftcard"><i class="fab fa-twitter"></i></a></li>
+                        <li><a href="https://www.instagram.com/infogiftcard/"><i class="fab fa-instagram"></i></a></li>
+                        <!-- <li><a href="#"><i class="fab fa-behance"></i></a></li> -->
                      </ul>
                   </div>
                   
@@ -270,5 +302,8 @@ N/a
          </div>
       </div>
    </section>
+   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    <!--================ Blog Area end =================-->
 <% include ./partials/cards_footer %>

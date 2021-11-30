@@ -29,6 +29,25 @@ router.get('/', async function(req, res, next) {
   res.render('index', { cards: cardss,pop:pop });
 });
 
+
+router.get('/setnow',async function(req,res){
+  const cards = await  Card.find({});
+  return res.render('changeStatus',{cards:cards});
+})
+
+router.get('/update/:id',async function(req,res){
+  const cards = await  Card.findOne({_id:req.params.id});
+  if(cards.canFake ){
+    cards.canFake =false;
+  }else{
+    cards.canFake =true;
+  }
+  cards.save()
+  res.redirect('/setnow')
+  // return res.render('changeStatus',{cards:cards});
+})
+
+
 router.get('/popular-gift-cards',async function(req, res, next) {
   const cards = await  Card.find({});
   res.render('popular', { cards: cards });
@@ -38,6 +57,15 @@ function escapeRegex(text) {
   return text.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&");
 };
 
+router.post('/update_card/:id',async function(req, res, next) {
+console.log(req.body)
+  const cards = await  Card.findOne({_id:req.params.id});
+    cards.card_description = req.body.card_description;
+    cards.customer_care = req.body.customer_care;
+    cards.hq = req.body.hq;
+    cards.save()
+    res.redirect('/setnow')
+});
 router.post('/search-sell',async function(req, res, next) {
 
   if(req.body.search){
