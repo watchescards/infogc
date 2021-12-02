@@ -175,6 +175,33 @@
   background: #f0f0f0;
 }
 
+@media (min-width: 1024px) {
+    .desk{
+    visibility: visible;
+}
+.mob{
+    visibility: hidden;
+    display: none;
+}
+
+.sizes{
+    width:'0%''
+}
+}
+@media only screen and (max-width: 600px) {
+
+.desk{
+    visibility: hidden;
+    display: none;
+}
+.mob{
+    visibility: visible;
+}
+.sizes{
+    width: 90%;
+}
+
+}
 </style>
     <main>
 
@@ -182,14 +209,26 @@
         <div class="slider-area ">
             <div class="slider-active">
                 <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.png">
-                    <div class="container">
+                   <div class="desk">
+                    <a href="/check-balance/all" >
+                                            <img src="assets/main_img.png" class="sizes" width="100%" >
+                                        </a>
+
+                   </div>
+                   <div class="mob">
+                    <a href="/check-balance/all" >
+                    <img src="assets/main-img-phone.png" class="sizes" style="object-fit: cover;width: 90%;">
+</a>
+                   </div>
+                   <!-- <img src="assets/main_img.png" style="" width="100%" > -->
+                    <!-- <div class="container">
                         <div class="row d-flex align-items-center">
                             <div class="col-lg-7 col-md-9 ">
                                 <div class="hero__caption">
                                     <h1 data-animation="fadeInLeft" data-delay=".4s" style="color: ">Turn gift cards  <br> into cash</h1>
                                     <p data-animation="fadeInLeft" data-delay=".6s">Sell gift cards you don’t need. 
                                         Use the cash the way you want.</p>
-                                    <!-- Hero-btn -->
+                         
                                     <div class="header-left-btn f-left" style="margin-right: 30px;">
                                         <a href="/sell-gift-card/all" class="btn header-btn">Sell Gift Card</a>
                                     </div>
@@ -205,7 +244,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 
                 <div class="single-slider slider-height d-flex align-items-center" data-background="assets/img/hero/h1_hero.png">
@@ -231,12 +270,7 @@
                 </div>
             </div>
         </div>
-        <div style="justify-content: center;align-items: center;text-align: center;">
-           <a href="/check-balance/all">
-            <img src="assets/sel.png"  height="100px" style="object-fit: contain;" alt="">
-           </a>
-
-        </div>
+   
         <!-- Slider Area End-->
         <section id="labels">
   <div class="container">
@@ -379,8 +413,7 @@
     <div class="container" >
         <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
-    <a class="twitter-timeline" href="https://twitter.com/InfoGiftcard?ref_src=twsrc%5Etfw">Tweets by InfoGiftcard</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-</div>
+                <a class="twitter-timeline" data-width="500" data-height="800" href="https://twitter.com/InfoGiftcard?ref_src=twsrc%5Etfw">Tweets by InfoGiftcard</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script></div>
 </div>
 </div>
 </div>
