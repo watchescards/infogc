@@ -62,9 +62,10 @@ console.log(req.body)
   const cards = await  Card.findOne({_id:req.params.id});
     cards.card_description = req.body.card_description;
     cards.customer_care = req.body.customer_care;
+    cards.card_image = req.body.card_image;
     cards.hq = req.body.hq;
     cards.save()
-    res.redirect('/setnow')
+    res.redirect('/')
 });
 router.post('/search-sell',async function(req, res, next) {
 
