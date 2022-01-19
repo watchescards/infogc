@@ -145,28 +145,28 @@ router.get('/dashboard/messages', function(req, res, next) {
   res.render('contact_messages', { title: 'Express' });
 });
 
-router.get('/cards/Walmart', function(req, res, next) {
+router.get('/card/Walmart', function(req, res, next) {
   res.render('walmart', { title: 'Express' });
 });
-router.get('/cards/home-depot', function(req, res, next) {
+router.get('/card/home-depot', function(req, res, next) {
   res.render('homedepot', { title: 'Express' });
 });
 
-router.get('/cards/target', function(req, res, next) {
+router.get('/card/target', function(req, res, next) {
   res.render('target', { title: 'Express' });
 });
-router.get('/cards/bestbuy', function(req, res, next) {
+router.get('/card/bestbuy', function(req, res, next) {
   res.render('bestbuy', { title: 'Express' });
 });
 
-router.get('/cards/starbucks', function(req, res, next) {
+router.get('/card/starbucks', function(req, res, next) {
   res.render('starbucks', { title: 'Express' });
 });
 
-router.get('/cards/itunes', function(req, res, next) {
+router.get('/card/itunes', function(req, res, next) {
   res.render('itunes', { title: 'Express' });
 });
-router.get('/cards/amazon', function(req, res, next) {
+router.get('/card/amazon', function(req, res, next) {
   res.render('amazon', { title: 'Express' });
 });
 router.get('/login', function(req, res, next) {
@@ -179,112 +179,112 @@ router.get('/connect-with-market', function(req, res, next) {
   res.render('connect', { title: 'Express' });
 });
 
-router.get('/cards/aberchrobie-and-fitch', function(req, res, next) {
+router.get('/card/aberchrobie-and-fitch', function(req, res, next) {
   res.render('aberchrobie-and-fitch', { title: 'Express' });
 });
 
-router.get('/cards/aeropostale', function(req, res, next) {
+router.get('/card/aeropostale', function(req, res, next) {
   res.render('aeropostale', { title: 'Express' });
 });
 
 
-router.get('/cards/bigbazar', function(req, res, next) {
+router.get('/card/bigbazar', function(req, res, next) {
   res.render('bigbazar', { title: 'Express' });
 });
-router.get('/cards/calvin-klin', function(req, res, next) {
+router.get('/card/calvin-klin', function(req, res, next) {
   res.render('calvin-klin', { title: 'Express' });
 });
 
-router.get('/cards/ebay', function(req, res, next) {
+router.get('/card/ebay', function(req, res, next) {
   res.render('ebay', { title: 'Express' });
 });
 
-router.get('/cards/fossil', function(req, res, next) {
+router.get('/card/fossil', function(req, res, next) {
   res.render('fossil', { title: 'Express' });
 });
-router.get('/cards/fandango', function(req, res, next) {
+router.get('/card/fandango', function(req, res, next) {
   res.render('fandango', { title: 'Express' });
 });
 
-router.get('/cards/yankee-candle', function(req, res, next) {
+router.get('/card/yankee-candle', function(req, res, next) {
   res.render('yankee');
 });
 
-router.get('/cards/ralph-laurel', function(req, res, next) {
+router.get('/card/ralph-laurel', function(req, res, next) {
   res.render('ralph');
 });
-router.get('/cards/ralph-laurel', function(req, res, next) {
+router.get('/card/ralph-laurel', function(req, res, next) {
   res.render('ralph');
 });
-router.get('/cards/mc-donalds', function(req, res, next) {
+router.get('/card/mc-donalds', function(req, res, next) {
   res.render('mcd');
 });
-router.get('/cards/nordstrom', function(req, res, next) {
+router.get('/card/nordstrom', function(req, res, next) {
   res.render('nordstrom');
 });
-router.get('/cards/quiznos', function(req, res, next) {
+router.get('/card/quiznos', function(req, res, next) {
   res.render('quiznos');
 });
-router.get('/cards/sephora', function(req, res, next) {
+router.get('/card/sephora', function(req, res, next) {
   res.render('sephora');
 });
 
-router.get('/cards/netflix', function(req, res, next) {
+router.get('/card/netflix', function(req, res, next) {
   res.render('netflix');
 });
 
-router.get('/cards/dunkin-donuts', function(req, res, next) {
+router.get('/card/dunkin-donuts', function(req, res, next) {
   res.render('ddonuts');
 });
-router.get('/cards/tgif', function(req, res, next) {
+router.get('/card/tgif', function(req, res, next) {
   res.render('tgif');
 });
-router.get('/cards/lego', function(req, res, next) {
+router.get('/card/lego', function(req, res, next) {
   res.render('lego');
 });
 
 
-router.get('/cards/oakley', function(req, res, next) {
+router.get('/card/oakley', function(req, res, next) {
   res.render('oakley');
 });
-router.get('/cards/kfc', function(req, res, next) {
+router.get('/card/kfc', function(req, res, next) {
   res.render('kfc');
 });
-router.get('/cards/zappos', function(req, res, next) {
+router.get('/card/zappos', function(req, res, next) {
   res.render('zappos');
 });
-router.get('/cards/pizza-hut', function(req, res, next) {
+router.get('/card/pizza-hut', function(req, res, next) {
   res.render('pizzahut');
 });
 
-router.get('/cards/sam-club', function(req, res, next) {
+router.get('/card/sam-club', function(req, res, next) {
   res.render('sclub');
 });
-router.get('/cards/jcpenney', function(req, res, next) {
+router.get('/card/jcpenney', function(req, res, next) {
   res.render('jcpenny');
 });
-router.get('/cards/under-armour', function(req, res, next) {
+router.get('/card/under-armour', function(req, res, next) {
   res.render('uarmour');
 });
-router.get('/cards/gucci', function(req, res, next) {
+router.get('/card/gucci', function(req, res, next) {
   res.render('gucci');
 });
 
 
-router.get('/cards/game-stop', function(req, res, next) {
+router.get('/card/game-stop', function(req, res, next) {
   res.render('gamestop');
 });
 
 
-router.get('/cards/cvs-pharma', function(req, res, next) {
+router.get('/card/cvs-pharma', function(req, res, next) {
   res.render('cvspharma');
 });
 
-router.get('/cards/foot-locker', function(req, res, next) {
+router.get('/card/foot-locker', function(req, res, next) {
   res.render('footlocker');
 });
 
-router.get('/cards/kohls', function(req, res, next) {
+router.get('/card/kohls', function(req, res, next) {
   res.render('kohls');
 });
 

@@ -224,10 +224,10 @@
                        </div>
                        
                         <%if(list.card_image.includes('assets')){%>
-                            <a href="/cards/<%=list._id%>"> <img src="https://https://gca.<%=list.card_image.substr(15,list.card_image.length)%>" class="card-img-top" alt="..."></a>
+                            <a href="/card/<%=list._id%>"> <img src="https://https://gca.<%=list.card_image.substr(15,list.card_image.length)%>" class="card-img-top" alt="..."></a>
 
                             <%}else{%>
- <a href="/cards/<%=list._id%>"> <img src="<%=list.card_image%>" class="card-img-top" alt="..."></a>
+ <a href="/card/<%=list._id%>"> <img src="<%=list.card_image%>" class="card-img-top" alt="..."></a>
  <%}%>
  
 </div>
