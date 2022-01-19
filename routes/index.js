@@ -48,7 +48,7 @@ router.get('/update/:id',async function(req,res){
 })
 
 
-router.get('/popular-gift-cards',async function(req, res, next) {
+router.get('/populargiftcard',async function(req, res, next) {
   const cards = await  Card.find({});
   res.render('popular', { cards: cards });
 });

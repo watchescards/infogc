@@ -106,38 +106,17 @@ app.use(function(req, res, next) {
 
 
 app.get('/getname/:lat/:lon',async function(req,res){    
-// axios.get('https://www.swiggy.com/dapi/misc/reverse-geocode?latlng=17.4079%2C78.4437')
-//   .then((response) => {
-//     return res.status(200).json({message:response.data});
-//   });
-// });
 
 axios.get(`https://www.zomato.com/webroutes/location/get?lat=${req.params.lat}&lon=${req.params.lon}`)
   .then((response) => {
     return res.status(200).json({message:response.data.locationDetails.placeName});
   });
 });
-// axios.get(`https://maps.googleapis.com/maps/api/js/GeocodeService.Search?5m2&1d17.3572096&2d78.544896&7sUS&9sen-GB&callback=_xdc_._3jfjgb&key=AIzaSyDSo8kVS5Q-2YSGRxrK2LHTeSApG4SNnmU&channel=p_dom_in&token=21727`)
-//   .then((response) => {
-//     return res.status(200).json({message:response.data.parse("\"'\"")});
-//   });
-// });
-
-
-
 
 app.use('/', indexRouter);
 
 app.use('/user', userRouter);
 
-
-
-
-
-// catch 404 and forward to error handler
-// app.use(function(req, res, next) {
-//   next(createError(404));
-// });
 var port = process.env.PORT || 3000;
 app.listen(port,function () {
   console.log("The Server Has Started!");
