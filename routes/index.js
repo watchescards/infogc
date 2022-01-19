@@ -124,9 +124,11 @@ router.get('/sell-gift-card/:search',async function(req, res, next) {
 });
 
 
-router.get('/cards/:id',async function(req, res, next) {
+router.get('/card/:id',async function(req, res, next) {
+
   const card = await  Card.findOne({_id:req.params.id});
   res.render('card_specific', { card: card });
+
 });
 router.get('/about', function(req, res, next) {
   res.render('about', { title: 'Express' });
